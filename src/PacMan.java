@@ -93,6 +93,10 @@ public class PacMan extends JPanel {
       pacmanUp = new ImageIcon(getClass().getResource("./pacmanUp.png")).getImage();
       pacmanRight = new ImageIcon(getClass().getResource("./pacmanRight.png")).getImage();
       pacmanLeft = new ImageIcon(getClass().getResource("./pacmanLeft.png")).getImage();
+   
+
+      loadMap();
+   
    }
 
    public void loadMap() {
@@ -137,6 +141,20 @@ public class PacMan extends JPanel {
       }
    }
 
+   public void paintComponent(Graphics g){
+      super.paintComponent(g);
+      draw(g);
+   }
+
+   public void draw(Graphics g){
+      g.drawImage( pacman.image , pacman.x, pacman.y , pacman.height, null );
+   }
+
+   public void draw(Graphics g){
+      g.drawImage(ghosts.image , ghost.x, ghost.y , ghost.width , ghost.height, null);
+   }
+
 }
 
-//27:00
+
+//30:00
