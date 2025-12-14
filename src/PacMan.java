@@ -65,7 +65,7 @@ public class PacMan extends JPanel {
          "XXXX X XXXXX X XXXX",
          "X        X        X",
          "X XX XXX X XXX XX X",
-         "X  X     P     X  X",
+         "X  X    XPX    X  X",
          "XX X X XXXXX X X XX",
          "X    X   X   X    X",
          "X XXXXXX X XXXXXX X",
@@ -152,9 +152,24 @@ public class PacMan extends JPanel {
 
    public void draw(Graphics g){
       g.drawImage(ghosts.image , ghost.x, ghost.y , ghost.width , ghost.height, null);
+
+      for(Block ghost : ghosts){
+         g.drawImage(ghost.image, ghost.x, ghost.y, ghost.width, ghost.height, null);
+      }
+
+      for(Block wall : walls){
+         g.drawImage(wall.image, wall.x, wall.y, wall.width, wall.height, null);
+      }
+
+      for(Color.WHITE){
+         for(Block food : foods){
+            g.fillRect(food.x, food.y, food.width, food.height);
+         }
+      }      
+      
    }
 
 }
 
 
-//30:00
+//31:50
